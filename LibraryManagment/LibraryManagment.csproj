@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\icon\documentAddIcon.png" />
+    <None Remove="images\icon\documentAddIconWhite.png" />
+    <None Remove="images\icon\libraryIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\icon\documentAddIcon.png" />
+    <Resource Include="images\icon\documentAddIconWhite.png" />
+    <Resource Include="images\icon\libraryIcon.png" />
+  </ItemGroup>
+
+</Project>
