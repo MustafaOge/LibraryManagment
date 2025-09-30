@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryManagment"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="600" MinWidth="800" ResizeMode="NoResize"
+        Title="MainWindow" MinHeight="600" MinWidth="900" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
     <Grid Focusable="True" ScrollViewer.CanContentScroll="True">
@@ -15,12 +15,20 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="16.8"/>
+            <ColumnDefinition Width="35.2"/>
+            <ColumnDefinition Width="168"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="162*"/>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="156*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="17*"/>
         </Grid.ColumnDefinitions>
 
         <!--Logo and button-->
-        <Border Background="#2596be" Grid.Row="0" Grid.Column="0">
+        <Border Background="#134187" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35" />
@@ -29,7 +37,7 @@
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0">
                     <DockPanel>
-                        <Image Source="/images/icon/libraryIcon.png" Width="25" Height="25" />
+                        <Image Source="/images/icon/flatIcon.png" Width="25" Height="25" />
                         <Label Content="KÜTÜPHANE PROGRAMI" Foreground="White" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
                     </DockPanel>
                 </Border>
@@ -39,12 +47,12 @@
                         <Image>
                             <Image.Style>
                                 <Style TargetType="Image">
-                                    <Setter Property="Source" Value="/images/icon/documentAddIcon.png"/>
+                                    <Setter Property="Source" Value="/images/icon/documentAdd.png"/>
                                     <Setter Property="Height" Value="auto" />
                                     <Setter Property="Width" Value="100"/>
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="true">
-                                            <Setter Property="Source" Value="/images/icon/documentAddIconWhite.png"/>
+                                            <Setter Property="Source" Value="/images/icon/documentAddWhite.png"/>
                                             <Setter Property="Width" Value="105"/>
                                         </Trigger>
                                     </Style.Triggers>
@@ -55,12 +63,12 @@
                 </Border>
             </Grid>
         </Border>
-        <Border Background="#FFFFFFFF" Grid.Column="1" Grid.Row="0">
+        <Border Background="#FFFFFFFF" Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="7">
         </Border>
 
         <!--Mini buttons and title-->
-        <Border Background="#2596be" Grid.Row="0" Grid.Column="1">
-            <Grid>
+        <Border Background="#134187" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="7" x:Name="top_border" MouseDown="top_border_MouseDown" IsEnabled="False">
+            <Grid MouseDown="Grid_MouseDown">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35" />
 
@@ -73,12 +81,132 @@
                         <Button Content="X" x:Name="btn_close" Click="btn_close_Click" Style="{DynamicResource mini-buttons}"/>
                     </DockPanel>
                 </Border>
+
+                <Border Grid.Row="1" Background="Transparent">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/windows/windowBottom.png"/>
+                            </Border.Background>
+
+                            <StackPanel VerticalAlignment="Center" Margin="30,0,0,0">
+                                <Label Content="Hoşgeldiniz" Foreground="White"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="1">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/windows/windowBottom.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </Border>
+
             </Grid>
         </Border>
 
         <!--Sidebar-->
-        <Border Background="#2596be" Grid.Row="1" Grid.Column="0">
+        <Border Background="#134187" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+
+            <StackPanel>
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/bookList.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Kitap Listesi" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/memberList.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Okuyucu Listesi" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/books.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Emanet Listesi" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/bookList.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Zamanı Dolanlar" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/overdueItems.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Hakkında" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+                <Image Source="/images/windows/windowBottom.png" />
+                <Canvas Height="25" Width="60" RenderTransformOrigin="1.37,-2.148">
+                    <Border>
+                        <Label Content="10.0.0.1"/>
+                    </Border>
+                </Canvas>
+
+
+
+
+            </StackPanel>
         </Border>
+        <Border Background="#134187" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+
+            <StackPanel>
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/bookList.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Kitap Listesi" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/memberList.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Okuyucu Listesi" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/books.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Emanet Listesi" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/bookList.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Zamanı Dolanlar" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+
+                <Button Height="50" Style="{DynamicResource menu-buttons}">
+                    <DockPanel>
+                        <Image Source="/images/icon/overdueItems.png" Width="32" OpacityMask="White"/>
+                        <Label Content="Hakkında" Foreground="White"/>
+                    </DockPanel>
+                </Button>
+                <Image Source="/images/windows/windowBottom.png" />
+
+                <Canvas >
+                    <Border Canvas.Left="72"  Background="#99053D76" CornerRadius="10,10,10,10">
+                        <Label Content="10.0.0.1" Foreground = "White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    </Border>
+                </Canvas>
+            </StackPanel>
+        </Border>
+        
 
     </Grid>
 </Window>

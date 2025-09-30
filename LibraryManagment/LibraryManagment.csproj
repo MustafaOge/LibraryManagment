@@ -9,15 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\icon\documentAdd.png" />
     <None Remove="images\icon\documentAddIcon.png" />
     <None Remove="images\icon\documentAddIconWhite.png" />
+    <None Remove="images\icon\documentAddWhite.png" />
     <None Remove="images\icon\libraryIcon.png" />
+    <None Remove="images\windows\windowBottom.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\icon\documentAddIcon.png" />
-    <Resource Include="images\icon\documentAddIconWhite.png" />
-    <Resource Include="images\icon\libraryIcon.png" />
+    <Resource Include="images\icon\documentAdd.png" />
+    <Resource Include="images\icon\documentAddWhite.png" />
+    <Resource Include="images\windows\windowBottom.png" />
   </ItemGroup>
 
 </Project>

@@ -25,5 +25,18 @@ namespace LibraryManagment
         {
             this.Close();
         }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(Mouse.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void top_border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
