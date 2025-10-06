@@ -9,18 +9,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\icon\book1.png" />
+    <None Remove="images\icon\bookList.png" />
+    <None Remove="images\icon\books.png" />
     <None Remove="images\icon\documentAdd.png" />
     <None Remove="images\icon\documentAddIcon.png" />
     <None Remove="images\icon\documentAddIconWhite.png" />
     <None Remove="images\icon\documentAddWhite.png" />
+    <None Remove="images\icon\flatIcon.png" />
     <None Remove="images\icon\libraryIcon.png" />
+    <None Remove="images\icon\memberList.png" />
+    <None Remove="images\icon\overdueItems.png" />
+    <None Remove="images\icon\person.png" />
+    <None Remove="images\windows\pencere_cizgi.png" />
     <None Remove="images\windows\windowBottom.png" />
+    <None Remove="images\windows\windowRight.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\icon\documentAdd.png" />
+    <Resource Include="images\icon\book1.png" />
+    <Resource Include="images\icon\bookList.png" />
+    <Resource Include="images\icon\books.png" />
     <Resource Include="images\icon\documentAddWhite.png" />
+    <Resource Include="images\icon\flatIcon.png" />
+    <Resource Include="images\icon\memberList.png" />
+    <Resource Include="images\icon\overdueItems.png" />
+    <Resource Include="images\icon\person.png" />
+    <Resource Include="images\icon\settings.png" />
+    <Resource Include="images\icon\documentAdd.png" />
+    <Resource Include="images\windows\pencere_cizgi.png" />
     <Resource Include="images\windows\windowBottom.png" />
+    <Resource Include="images\windows\windowRight.png" />
   </ItemGroup>
 
 </Project>

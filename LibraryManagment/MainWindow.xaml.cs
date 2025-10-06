@@ -1,13 +1,7 @@
-﻿using System.Text;
+﻿using LibraryManagment.Services;
+using LibraryManagment.Views.UserControls;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LibraryManagment
 {
@@ -37,6 +31,16 @@ namespace LibraryManagment
         private void top_border_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void menubutton_booklist_Click(object sender, RoutedEventArgs e)
+        {
+            UserControlHelper.AddToGrid(ContentArea, new BookList());
         }
     }
 }

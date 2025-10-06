@@ -4,68 +4,107 @@
              xmlns:local="clr-namespace:LibraryManagment"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
-        
+
         <!--Mini Buttons-->
-        <Style x:Key="mini-buttons" TargetType="Button">
+        <Style x:Key="minibutonlar" TargetType="Button">
             <Setter Property="Foreground" Value="#FF787878"/>
-            <Setter Property="Margin" Value="0,0,0,1"/>
-    
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="FontSize" Value="9"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0,0,0,0"/>
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Name="border"
-                                BorderThickness="0,0,0,0" 
-                                BorderBrush="#FF8F8F8F"
-                                Background="White">
+                        <Border Name="border" 
+                            BorderThickness="0,0,0,0"
+                            BorderBrush="#FF8F8F8F" 
+                            Background="White">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
-
                         <ControlTemplate.Triggers>
+
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="BorderBrush" Value="White"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="white" />
                                 <Setter TargetName="border" Property="Background" Value="#FF0F2E80" />
-                                <Setter  Property="Foreground" Value="White" />
+                                <Setter Property="Foreground" Value="White"/>
                             </Trigger>
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        
-        <!---Menu Buttons-->
 
-        <Style x:Key="menu-buttons" TargetType="Button">
+        <!--Menu Buttons-->
+        <Style x:Key="menubutonlar" TargetType="Button">
             <Setter Property="Foreground" Value="#FF787878"/>
+            <Setter Property="Margin" Value="0,0,0,1"/>
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Name="border"
-                                BorderThickness="5,0,0,0" 
-                                BorderBrush="#FF8F8F8F"
-                                Background="{x:Null}">
-                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"/>
-
+                        <Border Name="border" 
+                            BorderThickness="5,0,0,0"
+                            BorderBrush="{x:Null}" 
+                            Background="{x:Null}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
-
                         <ControlTemplate.Triggers>
+
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="BorderBrush" Value="#2b5493"/>
-                                <Setter TargetName="border" Property="Background" Value="#2b5493" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="#2e61af" />
+                                <Setter TargetName="border" Property="Background" Value="#2e61af" />
                                 <Setter TargetName="border" Property="BorderThickness" Value="5,0,0,0" />
-                                <Setter  Property="Foreground" Value="White" />
+                                <Setter Property="Foreground" Value="White"/>
                             </Trigger>
 
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter TargetName="border" Property="BorderBrush" Value="White"/>
-                                <Setter TargetName="border" Property="Background" Value="#2b5493" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="white" />
+                                <Setter TargetName="border" Property="Background" Value="#2e61af" />
                                 <Setter TargetName="border" Property="BorderThickness" Value="5,0,0,0" />
-                                <Setter  Property="Foreground" Value="White" />
+                                <Setter Property="Foreground" Value="White"/>
                             </Trigger>
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!--User Controller Buttons-->
+        <Style x:Key="userControllerAddBook" TargetType="Button">
+            <Setter Property="Foreground" Value="#FF3691D1"/>
+            <Setter Property="Margin" Value="0,0,0,1"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="27"/>
+            <Setter Property="Margin" Value="10,0,10,0" />
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="1,1,1,1"
+                            BorderBrush="#FF3691D1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF3691D1" />
+                                <Setter TargetName="border" Property="Background" Value="#CC3691D1" />
+                                <Setter TargetName="border" Property="BorderThickness" Value="1,1,1,1" />
+                                <Setter Property="Foreground" Value="#FF3691D1"/>
+                            </Trigger>
+                            
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>       
+
+
     </Application.Resources>
 </Application>
