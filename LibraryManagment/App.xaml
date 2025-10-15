@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:LibraryManagment"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
+        
         <!--Mini Buttons-->
         <Style x:Key="minibutonlar" TargetType="Button">
             <Setter Property="Foreground" Value="#FF787878"/>
@@ -81,7 +81,7 @@
             <Setter Property="Width" Value="100"/>
             <Setter Property="Height" Value="27"/>
             <Setter Property="Margin" Value="10,0,10,0" />
-            
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -91,20 +91,35 @@
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
-                            
+
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="border" Property="BorderBrush" Value="#FF3691D1" />
                                 <Setter TargetName="border" Property="Background" Value="#CC3691D1" />
                                 <Setter TargetName="border" Property="BorderThickness" Value="1,1,1,1" />
                                 <Setter Property="Foreground" Value="#FF3691D1"/>
                             </Trigger>
-                            
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>       
+        </Style>
 
-
+        <!--TextBox-->
+        <Style x:Key="MouseOverImageChange_Textbox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="BorderBrush" Value="#FF032D6C"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFEFF4FD"/>
+                    <Setter Property="BorderBrush" Value="#FF2F5DAC"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+            
     </Application.Resources>
 </Application>

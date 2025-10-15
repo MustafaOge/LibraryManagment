@@ -1,0 +1,102 @@
+﻿<Window x:Class="LibraryManagment.Views.Windows.AddBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryManagment.Views.Windows"
+        mc:Ignorable="d"
+        Title="AddBookWindow" Background="Transparent" Height="400" Width="900" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid>
+        <Canvas>
+            <Image Source="/images/icon/book1.png" RenderTransformOrigin="7.417,2.144" Height="57" Width="74" Canvas.Left="203" Canvas.Top="24" Panel.ZIndex="3"/>
+            <Label Content="KİTAP    EKLEME PENCERESİ" Foreground="White" Canvas.Left="306" Canvas.Top="52" Panel.ZIndex="3" FontWeight="Bold" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+            <Rectangle HorizontalAlignment="Left" Height="33"  VerticalAlignment="Center" Width="686" Panel.ZIndex="1" Fill="#FF0C0AAB" Canvas.Left="204" Canvas.Top="49"/>
+            <Border Height="337" Width="651" Canvas.Left="239" Canvas.Top="50" Background="#FFD1CFCF" CornerRadius="0,0,50,50" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.35" Direction="275"/>
+                </Border.Effect>
+
+            </Border>
+            <Ellipse  Panel.ZIndex="2" StrokeThickness="4" Height="107" Canvas.Left="179" Width="122" Fill="#FFD5DADA">
+
+                <Ellipse.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0C0AAB" Offset="0.542"/>
+                        <GradientStop Color="#FF0D0BAB" Offset="0.374"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.943"/>
+                        <GradientStop Color="White" Offset="0.069"/>
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+
+            <!--Text Box and labels -->
+            <Label Content="BARKOD" Canvas.Left="274" Canvas.Top="107" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Background="#FF0D0BAB" Width="78" Height="26" />
+            <TextBox Style="{DynamicResource MouseOverImageChange_Textbox}" HorizontalAlignment="Center" Canvas.Left="363" VerticalAlignment="Center" Width="120" Canvas.Top="107" Height="26"/>
+
+            <!--Text Box and labels -->
+            <Label Content="KİTAP ADI" Canvas.Left="274" Canvas.Top="138" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Background="#FF0D0BAB" Width="77" Height="24" RenderTransformOrigin="0.5,0.5" >
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.637"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.371"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox Style="{DynamicResource MouseOverImageChange_Textbox}" HorizontalAlignment="Left" Canvas.Left="363" VerticalAlignment="Center" Width="120" Canvas.Top="138" Height="26"/>
+
+            <Label Content="YAZARI" Canvas.Left="274" Canvas.Top="169" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Background="#FF0D0BAB" Width="77" RenderTransformOrigin="0.5,0.5" >
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0.819"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.186"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <ComboBox Canvas.Left="363" Canvas.Top="169" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Height="26" VerticalAlignment="Center" Width="120" />
+
+            <Label Content="YAYIN EVİ" Canvas.Left="274" Canvas.Top="200" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Background="#FF0D0BAB" Width="78"  />
+            <ComboBox Canvas.Left="363" Canvas.Top="200" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Height="26" VerticalAlignment="Center" Width="120" />
+
+            <Label Content="BASKI YERİ" Canvas.Left="274" Canvas.Top="231" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Background="#FF0D0BAB" Width="78" RenderTransformOrigin="0.501,1.972" Height="26" />
+            <ComboBox Canvas.Left="363" Canvas.Top="231" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="120" />
+
+            <Label Content="BASKI TARİHİ" Canvas.Left="274" Canvas.Top="262" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Background="#FF0D0BAB" Width="78" RenderTransformOrigin="0.501,1.972" Height="26" />
+            <DatePicker Canvas.Left="363" Canvas.Top="262"  HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="120" />
+
+            <Label Content="BASKI SAYISI" Canvas.Left="274" Canvas.Top="297" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Background="#FF0D0BAB" Width="78" Height="26" />
+            <TextBox Style="{DynamicResource MouseOverImageChange_Textbox}" HorizontalAlignment="Left" Canvas.Left="363" VerticalAlignment="Center" Width="120" Canvas.Top="297" Height="26"/>
+
+            <Label Content="KİTAP TÜRÜ" Canvas.Left="510" Canvas.Top="107" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF0D0BAB" Width="78" RenderTransformOrigin="0.501,1.972" Height="26" />
+            <ComboBox Canvas.Left="599" Canvas.Top="107" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="120" />
+
+            <Label Content="SAYFA SAYISI" Canvas.Left="510" Canvas.Top="138" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF0D0BAB" Width="78" Height="26" />
+            <TextBox Style="{DynamicResource MouseOverImageChange_Textbox}" HorizontalAlignment="Left" Canvas.Left="599" VerticalAlignment="Top" Width="120" Canvas.Top="138" Height="26"/>
+
+            <Label Content="TEMİN TÜRÜ" Canvas.Left="510" Canvas.Top="169" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Background="#FF0D0BAB" Width="78" RenderTransformOrigin="0.501,1.972" Height="26" />
+            <ComboBox Canvas.Left="599" Canvas.Top="169" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Center" Height="26" VerticalAlignment="Top" Width="120" />
+
+            <Label Content="TEMİN TARİHİ" Canvas.Left="510" Canvas.Top="200" Foreground="White" Background="#FF0D0BAB" Width="78" RenderTransformOrigin="0.501,1.972" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <DatePicker Canvas.Left="599" Canvas.Top="200" Height="26" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+            <Label Content="DİLİ" Canvas.Left="510" Canvas.Top="233" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Background="#FF0D0BAB" Width="78" RenderTransformOrigin="0.501,1.972" Height="26" />
+            <ComboBox Canvas.Left="599" Canvas.Top="233" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Center" Height="26" VerticalAlignment="Top" Width="120" />
+
+            <Label Content="KONUSU" Canvas.Left="510" Canvas.Top="264" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Background="#FF0D0BAB" Width="78" Height="26" />
+            <TextBox Style="{DynamicResource MouseOverImageChange_Textbox}" HorizontalAlignment="Center" Canvas.Left="599" VerticalAlignment="Top" Width="120" Canvas.Top="264" Height="59"/>
+
+            <Label Content="STOK ADEDİ" Canvas.Left="510" Canvas.Top="339" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Background="#FF0D0BAB" Width="78" Height="26" />
+            <TextBox Style="{DynamicResource MouseOverImageChange_Textbox}" HorizontalAlignment="Center" Canvas.Left="599" VerticalAlignment="Top" Width="120" Canvas.Top="339" Height="26"/>
+            <TextBox Style="{DynamicResource MouseOverImageChange_Textbox}" Canvas.Left="734" Width="120" Canvas.Top="339" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            <Label Content="Demirbaş No:" Canvas.Left="734" Canvas.Top="305" HorizontalAlignment="Left" VerticalAlignment="Center" Width="88" Height="26" />
+
+        </Canvas>
+
+    </Grid>
+</Window>
