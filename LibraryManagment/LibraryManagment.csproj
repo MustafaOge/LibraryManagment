@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\icon\addBook.png" />
+    <None Remove="images\icon\addImage.png" />
     <None Remove="images\icon\book1.png" />
+    <None Remove="images\icon\bookAddCancel.png" />
+    <None Remove="images\icon\bookInfo.png" />
     <None Remove="images\icon\bookList.png" />
     <None Remove="images\icon\books.png" />
     <None Remove="images\icon\documentAdd.png" />
@@ -31,7 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\icon\addBook.png" />
+    <Resource Include="images\icon\addImage.png" />
     <Resource Include="images\icon\book1.png" />
+    <Resource Include="images\icon\bookAddCancel.png" />
+    <Resource Include="images\icon\bookInfo.png" />
     <Resource Include="images\icon\bookList.png" />
     <Resource Include="images\icon\books.png" />
     <Resource Include="images\icon\documentAddWhite.png" />

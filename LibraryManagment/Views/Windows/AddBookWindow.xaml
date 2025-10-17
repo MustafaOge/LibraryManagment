@@ -8,7 +8,7 @@
         Title="AddBookWindow" Background="Transparent" Height="400" Width="900" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Grid>
         <Canvas>
-            <Image Source="/images/icon/book1.png" RenderTransformOrigin="7.417,2.144" Height="57" Width="74" Canvas.Left="203" Canvas.Top="24" Panel.ZIndex="3"/>
+            <Image Source="/images/icon/addBook.png" RenderTransformOrigin="7.417,2.144" Height="57" Width="74" Canvas.Left="219" Canvas.Top="36" Panel.ZIndex="3"/>
             <Label Content="KİTAP    EKLEME PENCERESİ" Foreground="White" Canvas.Left="306" Canvas.Top="52" Panel.ZIndex="3" FontWeight="Bold" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
             <Rectangle HorizontalAlignment="Left" Height="33"  VerticalAlignment="Center" Width="686" Panel.ZIndex="1" Fill="#FF0C0AAB" Canvas.Left="204" Canvas.Top="49"/>
@@ -18,17 +18,26 @@
                 </Border.Effect>
 
             </Border>
-            <Ellipse  Panel.ZIndex="2" StrokeThickness="4" Height="107" Canvas.Left="179" Width="122" Fill="#FFD5DADA">
-
+            <Ellipse Height="111" Width="108" Canvas.Left="202" Canvas.Top="6" Panel.ZIndex="2" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource rotating_icon}">
+                <Ellipse.RenderTransform>
+                    <RotateTransform/>
+                </Ellipse.RenderTransform>
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF134187" Offset="0.963"/>
+                        <GradientStop Color="White" Offset="0.983"/>
+                        <GradientStop Color="#FFF1F2F3" Offset="0.937"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
                 <Ellipse.Stroke>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF0C0AAB" Offset="0.542"/>
-                        <GradientStop Color="#FF0D0BAB" Offset="0.374"/>
+                        <GradientStop Color="#FF134187" Offset="0.187"/>
                         <GradientStop Color="White" Offset="1"/>
-                        <GradientStop Color="White" Offset="0.943"/>
-                        <GradientStop Color="White" Offset="0.069"/>
+                        <GradientStop Color="#FF4B6EA3" Offset="0.817"/>
+                        <GradientStop Color="White"/>
                     </LinearGradientBrush>
                 </Ellipse.Stroke>
+
             </Ellipse>
 
             <!--Text Box and labels -->
@@ -94,7 +103,23 @@
             <TextBox Style="{DynamicResource MouseOverImageChange_Textbox}" HorizontalAlignment="Center" Canvas.Left="599" VerticalAlignment="Top" Width="120" Canvas.Top="339" Height="26"/>
             <TextBox Style="{DynamicResource MouseOverImageChange_Textbox}" Canvas.Left="734" Width="120" Canvas.Top="339" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
+            <Image Source="/images/icon/addImage.png" Canvas.Left="741" Canvas.Top="112" Height="146" Width="125" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.642,0.508" />
+            <Ellipse Height="18" Width="145" Canvas.Left="734" Canvas.Top="264" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF585859" Offset="0.017"/>
+                        <GradientStop Color="#FFC8C5C5" Offset="0.698"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
             <Label Content="Demirbaş No:" Canvas.Left="734" Canvas.Top="305" HorizontalAlignment="Left" VerticalAlignment="Center" Width="88" Height="26" />
+
+
+            <!--Buttons-->
+            <Button Height="44" Width="50" Canvas.Left="819" Canvas.Top="223"  Style="{DynamicResource CircleButton}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button Height="68" Width="68" Canvas.Left="785" Canvas.Top="29" Panel.ZIndex="5" Style="{DynamicResource CircleButtonClose}" x:Name="btnCloseBookItem" Click="btnCloseBookItem_Click" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Button Height="68" Width="68" Canvas.Left="843" Canvas.Top="29" Panel.ZIndex="5" Style="{DynamicResource CircleButtonInfo}" x:Name="btnBookItemInfo" Click="btnBookItemInfo_Click" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
 
         </Canvas>
 

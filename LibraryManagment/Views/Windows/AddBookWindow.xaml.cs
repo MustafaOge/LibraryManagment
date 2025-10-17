@@ -28,5 +28,19 @@ namespace LibraryManagment.Views.Windows
         {
 
         }
+
+        private void btnCloseBookItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow gk = (MainWindow)Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+            gk.Opacity = 1;
+        }
+
+        private void btnBookItemInfo_Click(object sender, RoutedEventArgs e)
+        {
+            // Buraya bilgi butonuna tıklandığında yapılacak işlemleri yazabilirsin
+            MessageBox.Show("Book info button clicked!");
+        }
+
     }
 }
