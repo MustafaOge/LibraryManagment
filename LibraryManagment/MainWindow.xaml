@@ -98,13 +98,8 @@
                             <!-- Sağ -->
                         </Grid.ColumnDefinitions>
 
-                        <!-- Sol tarafta hamburger menü -->
-                        <Button x:Name="btn_hambuergerMenu"
-                        Click="btn_hambuergerMenu_Click"
-                        Content="≡"
-                        Style="{DynamicResource minibutonlar}"
-                        Grid.Column="0"
-                        FontSize="16"/>
+                        <Image Source="/images/icon/menu.png" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0"  x:Name="btn_hamburgermenu" MouseDown="btn_hamburgermenu_MouseDown" Style="{DynamicResource btn_hambuergerMenu}" RenderTransformOrigin="0.5,0.5"/>
+
 
                         <!-- Sağ tarafta minimize, maximize, close -->
                         <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
@@ -185,42 +180,42 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" >
-                    <Button Height="50" Style="{DynamicResource menubutonlar}" HorizontalContentAlignment="Left" x:Name="menubutton_booklist" Click="menubutton_booklist_Click">
+                    <ToggleButton Height="50" Style="{DynamicResource menuButtons}" HorizontalContentAlignment="Left" x:Name="menubutton_booklist" Tag="1" Click="MenuButton_Click" Checked="menubutton_booklist_Checked">
                         <DockPanel Width="220" Margin="15,0,0,0" >
                             <Image Source="/images/icon/books.png" Width="32"/>
                             <Label Content="Kitap Listesi" Foreground="White" FontSize="16" x:Name="lbl_menu1"/>
                         </DockPanel>
-                    </Button>
-                    <Button Height="50" Style="{DynamicResource menubutonlar}">
+                    </ToggleButton>
+                    <ToggleButton Height="50" Style="{DynamicResource menuButtons}" x:Name="menubutton_memberlist" Tag="2" Click="MenuButton_Click">
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="/images/icon/memberList.png" Width="32"/>
                             <Label Content="Okuyucu Listesi" Foreground="White" FontSize="16" x:Name="lbl_menu2"/>
                         </DockPanel>
-                    </Button>
-                    <Button Height="50" Style="{DynamicResource menubutonlar}">
+                    </ToggleButton>
+                    <ToggleButton Height="50" Style="{DynamicResource menuButtons}" x:Name="menubutton_loanlist" Tag="3" Click="MenuButton_Click">
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="/images/icon/book1.png" Width="32"/>
                             <Label Content="Emanet Listesi" Foreground="White" FontSize="16"  x:Name="lbl_menu3"/>
                         </DockPanel>
-                    </Button>
-                    <Button Height="50" Style="{DynamicResource menubutonlar}">
+                    </ToggleButton>
+                    <ToggleButton Height="50" Style="{DynamicResource menuButtons}" x:Name="menubutton_overduelist" Tag="4" Click="MenuButton_Click">
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="/images/icon/overdueItems.png" Width="32"/>
                             <Label Content="Zamanı Dolanlar" Foreground="White" FontSize="16"  x:Name="lbl_menu4"/>
                         </DockPanel>
-                    </Button>
-                    <Button Height="50" Style="{DynamicResource menubutonlar}">
+                    </ToggleButton>
+                    <ToggleButton Height="50" Style="{DynamicResource menuButtons}" x:Name="menubutton_settings" Tag="5" Click="MenuButton_Click">
                         <DockPanel Width="220" Margin="15,0,0,0">
-                            <Image Source="/images/icon/books.png" Width="32"/>
-                            <Label Content="Kitap Listesi" Foreground="White" FontSize="16"  x:Name="lbl_menu5"/>
+                            <Image Source="/images/icon/settings.png" Width="32"/>
+                            <Label Content="Ayarlar" Foreground="White" FontSize="16"  x:Name="lbl_menu5"/>
                         </DockPanel>
-                    </Button>
-                    <Button Height="50" Style="{DynamicResource menubutonlar}">
+                    </ToggleButton>
+                    <ToggleButton Height="50" Style="{DynamicResource menuButtons}" x:Name="menubutton_abaout" Tag="6" Click="MenuButton_Click">
                         <DockPanel Width="220" Margin="15,0,0,0">
                             <Image Source="images/icon/book1.png" Width="32"/>
                             <Label Content="Hakkında" Foreground="White" FontSize="16"  x:Name="lbl_menu6"/>
                         </DockPanel>
-                    </Button>
+                    </ToggleButton>
                     <StackPanel Grid.Row="4">
                         <Image Source="/images/windows/windowBottom.png" Height="135" Panel.ZIndex="-99" Margin="0,3,0,0" x:Name="menu_bottom_window_image"/>
                     </StackPanel>

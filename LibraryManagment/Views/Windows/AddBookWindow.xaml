@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AddBookWindow" Background="Transparent" Height="400" Width="900" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Grid>
-        <Canvas>
+        <Canvas Margin="0,0,-165,0">
             <Image Source="/images/icon/addBook.png" RenderTransformOrigin="7.417,2.144" Height="57" Width="74" Canvas.Left="219" Canvas.Top="36" Panel.ZIndex="3"/>
             <Label Content="KİTAP    EKLEME PENCERESİ" Foreground="White" Canvas.Left="306" Canvas.Top="52" Panel.ZIndex="3" FontWeight="Bold" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
@@ -120,8 +120,19 @@
             <Button Height="68" Width="68" Canvas.Left="785" Canvas.Top="29" Panel.ZIndex="5" Style="{DynamicResource CircleButtonClose}" x:Name="btnCloseBookItem" Click="btnCloseBookItem_Click" HorizontalAlignment="Left" VerticalAlignment="Center" />
             <Button Height="68" Width="68" Canvas.Left="843" Canvas.Top="29" Panel.ZIndex="5" Style="{DynamicResource CircleButtonInfo}" x:Name="btnBookItemInfo" Click="btnBookItemInfo_Click" HorizontalAlignment="Left" VerticalAlignment="Center" />
 
-
+            <Grid Height="205" Width="296" Canvas.Left="869" Canvas.Top="63">
+                <Popup Placement="Center" x:Name="popup_info" Margin="10,0,0,-10"
+                       AllowsTransparency="True" PopupAnimation="Slide">
+                    
+                    <Border Background="#FF0C4680" Height="154" Width="225" CornerRadius="0,20,50,30">
+                        <StackPanel Margin="10,10,-23,0">
+                            <TextBlock Text="BİLGİLENDİRME" Foreground="White" FontWeight="Bold"/>
+                            <TextBlock Text="&#10;Stok adedi girdiğinizde&#10;girilen sayı kadar kitap eklenecektir&#10;ve her kitaba otomatik&#10;demirbaş numarası verilecektir." Foreground="White"/>
+                        </StackPanel>
+                    </Border>
+                    
+                </Popup>
+            </Grid>
         </Canvas>
-
     </Grid>
 </Window>

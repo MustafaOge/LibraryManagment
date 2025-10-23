@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:LibraryManagment"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
+
         <!--Mini Buttons-->
         <Style x:Key="minibutonlar" TargetType="Button">
             <Setter Property="Foreground" Value="#FF787878"/>
@@ -37,14 +37,27 @@
             </Setter>
         </Style>
 
+        <!--Hamburger Buttons-->
+        <Style x:Key="btn_hambuergerMenu" TargetType="Image">
+            <Setter Property="Opacity" Value="0.7"/>
+            <Setter Property="Width" Value="16"/>
+            <Style.Triggers>
+                <Trigger  Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Opacity" Value="1"/>
+                    <Setter Property="Width" Value="20"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
         <!--Menu Buttons-->
-        <Style x:Key="menubutonlar" TargetType="Button">
+        <Style x:Key="menuButtons" TargetType="ToggleButton">
             <Setter Property="Foreground" Value="#FF787878"/>
             <Setter Property="Margin" Value="0,0,0,1"/>
 
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate TargetType="ToggleButton">
                         <Border Name="border" 
                             BorderThickness="5,0,0,0"
                             BorderBrush="{x:Null}" 
@@ -60,7 +73,7 @@
                                 <Setter Property="Foreground" Value="White"/>
                             </Trigger>
 
-                            <Trigger Property="IsFocused" Value="True">
+                            <Trigger Property="IsChecked" Value="True">
                                 <Setter TargetName="border" Property="BorderBrush" Value="white" />
                                 <Setter TargetName="border" Property="Background" Value="#2e61af" />
                                 <Setter TargetName="border" Property="BorderThickness" Value="5,0,0,0" />
@@ -188,7 +201,7 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
                             <Ellipse x:Name="Butondaire" Width="55" Height="55" Fill="#FF032D6C" Stroke="White" />
-                            <Image Source="/images/icon/bookInfo.png" Width="35" Height="auto" ToolTip="Bilgilen"/>
+                            <Image Source="/images/icon/bookInfo.png" Width="35" Height="auto" ToolTip="Bilgi ver"/>
 
                             <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Grid>
@@ -235,8 +248,8 @@
                 </EventTrigger>
             </Style.Triggers>
         </Style>
-        
-        
+
+
         <!--Combobox Style-->
 
         <!-- Flat ComboBox -->

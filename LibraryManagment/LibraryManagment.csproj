@@ -23,6 +23,7 @@
     <None Remove="images\icon\flatIcon.png" />
     <None Remove="images\icon\libraryIcon.png" />
     <None Remove="images\icon\memberList.png" />
+    <None Remove="images\icon\menu.png" />
     <None Remove="images\icon\overdueItems.png" />
     <None Remove="images\icon\person.png" />
     <None Remove="images\windows\pencere_cizgi.png" />
@@ -45,6 +46,7 @@
     <Resource Include="images\icon\documentAddWhite.png" />
     <Resource Include="images\icon\flatIcon.png" />
     <Resource Include="images\icon\memberList.png" />
+    <Resource Include="images\icon\menu.png" />
     <Resource Include="images\icon\overdueItems.png" />
     <Resource Include="images\icon\person.png" />
     <Resource Include="images\icon\settings.png" />
@@ -52,6 +54,12 @@
     <Resource Include="images\windows\pencere_cizgi.png" />
     <Resource Include="images\windows\windowBottom.png" />
     <Resource Include="images\windows\windowRight.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\Music\popup.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

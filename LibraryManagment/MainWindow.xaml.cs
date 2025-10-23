@@ -2,6 +2,7 @@
 using LibraryManagment.Services;
 using LibraryManagment.Views.UserControls;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace LibraryManagment
@@ -41,10 +42,7 @@ namespace LibraryManagment
 
         }
 
-        private void menubutton_booklist_Click(object sender, RoutedEventArgs e)
-        {
-            UserControlHelper.AddToGrid(ContentArea, new BookList());
-        }
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -72,10 +70,9 @@ namespace LibraryManagment
                 grd_MainGridWindow.Margin = new Thickness(0, 0, 0, 0);
             }
         }
-
-        private void btn_hambuergerMenu_Click(object sender, RoutedEventArgs e)
+        private void btn_hamburgermenu_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (btn_hambuergerMenu.Width != 60)
+            if (btn_hamburgermenu.Width != 60)
             {
                 grdColumn_menu.Width = new GridLength(80, GridUnitType.Pixel);
 
@@ -87,7 +84,7 @@ namespace LibraryManagment
                 lbl_menu6.Visibility = Visibility.Hidden;
 
                 lbl_logotitle.Width = 0;
-                btn_hambuergerMenu.Width = 60;
+                btn_hamburgermenu.Width = 60;
                 menu_bottom_border.Visibility = Visibility.Hidden;
                 menu_bottom_window_image.Visibility = Visibility.Hidden;
             }
@@ -103,13 +100,39 @@ namespace LibraryManagment
                 lbl_menu6.Visibility = Visibility.Visible;
 
                 lbl_logotitle.Width = 150;
-                btn_hambuergerMenu.Width = 100;
+                btn_hamburgermenu.Width = 100;
                 menu_bottom_border.Visibility = Visibility.Visible;
                 menu_bottom_window_image.Visibility = Visibility.Visible;
             }
+
         }
 
 
+        short currentSelect = 0;
 
+        // Code-behind
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is ToggleButton button)
+            {
+                currentSelect = short.Parse(button.Tag.ToString());
+                SelectState();
+            }
+        }
+
+        public void SelectState()
+        {
+            menubutton_booklist.IsChecked = currentSelect == 1;
+            menubutton_memberlist.IsChecked = currentSelect == 2;
+            menubutton_loanlist.IsChecked= currentSelect == 3;
+            menubutton_overduelist.IsChecked = currentSelect == 4;
+            menubutton_settings.IsChecked  = currentSelect == 5;
+            menubutton_abaout.IsChecked = currentSelect == 6;
+        }
+
+        private void menubutton_booklist_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

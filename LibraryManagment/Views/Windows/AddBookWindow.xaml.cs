@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LibraryManagment.Enums;
+using LibraryManagment.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,11 +38,10 @@ namespace LibraryManagment.Views.Windows
             gk.Opacity = 1;
         }
 
-        private void btnBookItemInfo_Click(object sender, RoutedEventArgs e)
+        private async void btnBookItemInfo_Click(object sender, RoutedEventArgs e)
         {
-            // Buraya bilgi butonuna tıklandığında yapılacak işlemleri yazabilirsin
-            MessageBox.Show("Book info button clicked!");
+            SoundHelper.Play(SoundType.Popup);
+            await PopupHelper.ShowPopupAsync(popup_info, 3000);
         }
-
     }
 }
