@@ -1,4 +1,5 @@
-﻿using LibraryManagment.Views.Windows;
+﻿using LibraryManagment.Data;
+using LibraryManagment.Views.Windows;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -22,6 +23,16 @@ namespace LibraryManagment.Views.UserControls
             addBookWindow.Owner = gk;
             gk.Opacity = 0.3;
             addBookWindow.ShowDialog();
+
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            DbProcess.FillGrid(dtg_book_list);
+        }
+
+        private void dtg_book_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }

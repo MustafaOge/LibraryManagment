@@ -26,6 +26,8 @@
     <None Remove="images\icon\menu.png" />
     <None Remove="images\icon\overdueItems.png" />
     <None Remove="images\icon\person.png" />
+    <None Remove="images\icon\successful.png" />
+    <None Remove="images\icon\unsuccessful.png" />
     <None Remove="images\windows\pencere_cizgi.png" />
     <None Remove="images\windows\windowBottom.png" />
     <None Remove="images\windows\windowRight.png" />
@@ -51,6 +53,8 @@
     <Resource Include="images\icon\person.png" />
     <Resource Include="images\icon\settings.png" />
     <Resource Include="images\icon\documentAdd.png" />
+    <Resource Include="images\icon\successful.png" />
+    <Resource Include="images\icon\unsuccessful.png" />
     <Resource Include="images\windows\pencere_cizgi.png" />
     <Resource Include="images\windows\windowBottom.png" />
     <Resource Include="images\windows\windowRight.png" />
@@ -60,6 +64,10 @@
     <None Update="Assets\Music\popup.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Entities\" />
   </ItemGroup>
 
 </Project>

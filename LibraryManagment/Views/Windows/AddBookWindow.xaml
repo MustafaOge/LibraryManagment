@@ -18,7 +18,7 @@
                 </Border.Effect>
 
             </Border>
-            <Ellipse Height="111" Width="108" Canvas.Left="202" Canvas.Top="6" Panel.ZIndex="2" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource rotating_icon}">
+            <Ellipse Height="111" Width="108" Canvas.Left="202" Canvas.Top="6" Panel.ZIndex="2" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource rotating_icon}" x:Name="btn_book_add" MouseDown="btn_book_add_MouseDown">
                 <Ellipse.RenderTransform>
                     <RotateTransform/>
                 </Ellipse.RenderTransform>

@@ -5,7 +5,7 @@ namespace LibraryManagment.Data
 {
     public static class DatabaseConnection
     {
-        private static readonly string DbConnection =
+        internal static readonly string DbConnection =
             $@"Data Source={Environment.CurrentDirectory}\Database\LIBRARY_MANAGEMENT.db";
 
         public static string ConnState = string.Empty;
