@@ -155,7 +155,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/images/icon/person.png" Width="100"/>
                                     <StackPanel VerticalAlignment="Center" Margin="3,0,0,0">
-                                        <Label Content="Ahmet OKU" Background="#FF84A7F1" Foreground="White" FontWeight="Bold"/>
+                                        <Label Content="Mustafa ÖĞE" Background="#FF84A7F1" Foreground="White" FontWeight="Bold"/>
                                         <Label Content="Yönetici" Background="#FF224059" Foreground="White" FontWeight="Bold"/>
                                     </StackPanel>
                                 </StackPanel>
@@ -246,7 +246,7 @@
         </Border>
 
         <!--Content-->
-        <Border Grid.Column="1" Grid.Row="1" Background="Gray" >
+        <Border Grid.Column="1" Grid.Row="1" Background="#FFEEEEEE" >
             <Grid x:Name="ContentArea"/>
         </Border>
 

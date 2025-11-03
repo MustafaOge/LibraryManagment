@@ -1,8 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
-using System;
 using System.Data;
-using System.Windows.Controls;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace LibraryManagment.Data
 {
