@@ -1,9 +1,8 @@
 ﻿using LibraryManagment.Data;
-using LibraryManagment.Services;
-using LibraryManagment.Views.UserControls;
+using LibraryManagment.ViewModels;
 using System.Windows;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Diagnostics;
 
 namespace LibraryManagment
 {
@@ -12,127 +11,39 @@ namespace LibraryManagment
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(MainWindowViewModel viewModel)
         {
             InitializeComponent();
-            this.MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;   
-            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-        }
 
-        private void btn_close_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            this.MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+
+            this.DataContext = viewModel;
+
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(Mouse.LeftButton == MouseButtonState.Pressed)
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
             {
                 this.DragMove();
             }
         }
 
-        private void top_border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            UserControlHelper.AddToGrid(ContentArea, new BookList());
-            DatabaseConnection.ConnectionTest();
-            //Version.Content = DatabaseConnection.ConnState;
-        }
 
-        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
-
-        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.WindowState == WindowState.Maximized)
+            try
             {
-                this.WindowState = WindowState.Normal;
-                grd_MainGridWindow.Margin = new Thickness(0, 0, 0, 0);
-
+                DatabaseConnection.ConnectionTest();
+                Debug.WriteLine("Database bağlantısı başarılı");
             }
-            else
+            catch (Exception ex)
             {
-                this.WindowState = WindowState.Maximized;
-                grd_MainGridWindow.Margin = new Thickness(0, 0, 0, 0);
+                Debug.WriteLine($"Database hatası: {ex.Message}");
+                MessageBox.Show($"Veritabanı bağlantısı kurulamadı: {ex.Message}",
+                    "Bağlantı Hatası", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-        private void btn_hamburgermenu_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (btn_hamburgermenu.Width != 60)
-            {
-                grdColumn_menu.Width = new GridLength(80, GridUnitType.Pixel);
-
-                lbl_menu1.Visibility = Visibility.Hidden;
-                lbl_menu2.Visibility = Visibility.Hidden;
-                lbl_menu3.Visibility = Visibility.Hidden;
-                lbl_menu4.Visibility = Visibility.Hidden;
-                lbl_menu5.Visibility = Visibility.Hidden;
-                lbl_menu6.Visibility = Visibility.Hidden;
-
-                lbl_logotitle.Width = 0;
-                btn_hamburgermenu.Width = 60;
-                menu_bottom_border.Visibility = Visibility.Hidden;
-                menu_bottom_window_image.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                grdColumn_menu.Width = new GridLength(220, GridUnitType.Pixel);
-
-                lbl_menu1.Visibility = Visibility.Visible;
-                lbl_menu2.Visibility = Visibility.Visible;
-                lbl_menu3.Visibility = Visibility.Visible;
-                lbl_menu4.Visibility = Visibility.Visible;
-                lbl_menu5.Visibility = Visibility.Visible;
-                lbl_menu6.Visibility = Visibility.Visible;
-
-                lbl_logotitle.Width = 150;
-                btn_hamburgermenu.Width = 100;
-                menu_bottom_border.Visibility = Visibility.Visible;
-                menu_bottom_window_image.Visibility = Visibility.Visible;
-            }
-
-        }
-
-
-        short currentSelect = 0;
-
-        // Code-behind
-        private void MenuButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (sender is ToggleButton button)
-            {
-                currentSelect = short.Parse(button.Tag.ToString());
-                SelectState();
-            }
-        }
-
-        public void SelectState()
-        {
-            menubutton_booklist.IsChecked = currentSelect == 1;
-            menubutton_memberlist.IsChecked = currentSelect == 2;
-            menubutton_loanlist.IsChecked= currentSelect == 3;
-            menubutton_overduelist.IsChecked = currentSelect == 4;
-            menubutton_settings.IsChecked  = currentSelect == 5;
-            menubutton_abaout.IsChecked = currentSelect == 6;
-        }
-
-        private void menubutton_booklist_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
