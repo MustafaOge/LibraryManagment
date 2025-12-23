@@ -49,7 +49,7 @@ namespace LibraryManagment.Data.Configurations
 
             builder.Property(b => b.PrintDate)
                 .HasColumnName("PRINT_DATE")
-                .HasMaxLength(50);
+                .IsRequired(false);
 
             builder.Property(b => b.AcquisitionType)
                 .HasColumnName("ACQUISITION_TYPE")
@@ -57,7 +57,7 @@ namespace LibraryManagment.Data.Configurations
 
             builder.Property(b => b.AcquisitionDate)
                 .HasColumnName("ACQUISITION_DATE")
-                .HasMaxLength(50);
+                .IsRequired(false);
 
             builder.Property(b => b.PageCount)
                 .HasColumnName("PAGE_COUNT");

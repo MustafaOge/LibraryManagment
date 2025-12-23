@@ -108,7 +108,7 @@
 
                     <!-- Author için navigation property kullanıyorsunuz -->
                     <DataGridTextColumn
-        Binding="{Binding Path=Author.Name}" 
+        Binding="{Binding Path=AuthorFullName}" 
         IsReadOnly="True" 
         Header="KİTAP YAZARI" 
         MinWidth="50">
@@ -151,7 +151,7 @@
 
                     <!-- Publisher için navigation property -->
                     <DataGridTextColumn
-        Binding="{Binding Path=Publisher.Name}" 
+        Binding="{Binding Path=PublisherName}" 
         IsReadOnly="True" 
         Header="YAYIN EVİ" 
         MinWidth="50">

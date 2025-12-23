@@ -22,11 +22,11 @@ namespace LibraryManagment.Data.Entities
 
         public int? PrintNumber { get; set; }
 
-        public string PrintDate { get; set; }
+        public DateTimeOffset? PrintDate { get; set; }
 
         public string AcquisitionType { get; set; }
 
-        public string AcquisitionDate { get; set; }
+        public DateTimeOffset? AcquisitionDate { get; set; }
 
         public int? PageCount { get; set; }
 

@@ -1,6 +1,9 @@
-﻿using LibraryManagment.Commands;
+﻿using AutoMapper;
+using LibraryManagment.Commands;
 using LibraryManagment.Data.Entities;
+using LibraryManagment.Model;
 using LibraryManagment.Services;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows;
@@ -13,21 +16,23 @@ namespace LibraryManagment.ViewModels
         private readonly IBookService _bookService;
         private bool _isLoading;
         private string _errorMessage;
+        private readonly IMapper mapper;
 
-        public BookListViewModel(IBookService bookService)
+        public BookListViewModel(IBookService bookService, IMapper mapper)
         {
             _bookService = bookService;
-            Books = new ObservableCollection<Book>();
+            Books = new ObservableCollection<BookListModel>();
 
             LoadBooksCommand = new RelayCommand(async _ => await LoadBooksAsync());
             RefreshCommand = new RelayCommand(async _ => await LoadBooksAsync());
             AddBookCommand = new RelayCommand(_ => OpenAddBookWindow());
 
             _ = LoadBooksAsync();
+            this.mapper = mapper;
         }
 
         // Properties
-        public ObservableCollection<Book> Books { get; }
+        public ObservableCollection<BookListModel> Books { get; }
 
         public bool IsLoading
         {
@@ -69,8 +74,9 @@ namespace LibraryManagment.ViewModels
 
                 var books = await _bookService.GetAllAsync();
 
+                var bookList = mapper.Map<List<BookListModel>>(books);
                 Books.Clear();
-                foreach (var book in books)
+                foreach (var book in bookList)
                 {
                     Books.Add(book);
                 }

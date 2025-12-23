@@ -29,7 +29,6 @@ namespace LibraryManagment
                 this.DragMove();
             }
         }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -44,6 +43,7 @@ namespace LibraryManagment
                 MessageBox.Show($"Veritabanı bağlantısı kurulamadı: {ex.Message}",
                     "Bağlantı Hatası", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
+        
+}
     }
 }

@@ -27,6 +27,8 @@ namespace LibraryManagment.Services
         public async Task<List<Book>> GetAllAsync()
         {
             var bookList = await bookRepository.Table()
+                .Include(b => b.Author)
+                .Include(b => b.Publisher)
                 .Where(b => b.IsDeleted == false)
                 .ToListAsync();
 

@@ -45,6 +45,7 @@ namespace LibraryManagment
             services.AddScoped<IBookRepository, BookRepository>();
 
             // Services
+            services.AddAutoMapper(typeof(AutoMapper.MapperProfile));
             services.AddScoped<IBookService, BookService>();
             services.AddSingleton<INavigationService, NavigationService>();
 
